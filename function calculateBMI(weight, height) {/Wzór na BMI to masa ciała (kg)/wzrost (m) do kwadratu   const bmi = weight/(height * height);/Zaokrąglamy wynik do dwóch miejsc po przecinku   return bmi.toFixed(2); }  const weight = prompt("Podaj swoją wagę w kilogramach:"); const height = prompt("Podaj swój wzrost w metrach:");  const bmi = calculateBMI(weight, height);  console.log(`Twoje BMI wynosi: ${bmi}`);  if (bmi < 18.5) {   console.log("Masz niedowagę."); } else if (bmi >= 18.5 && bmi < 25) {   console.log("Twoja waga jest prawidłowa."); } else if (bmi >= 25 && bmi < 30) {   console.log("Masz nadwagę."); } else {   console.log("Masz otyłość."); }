@@ -1,0 +1,24 @@
+function calculateBMI(weight, height) {
+  // Wzór na BMI to masa ciała (kg) / wzrost (m) do kwadratu
+  const bmi = weight / (height * height);
+
+  // Zaokrąglamy wynik do dwóch miejsc po przecinku
+  return bmi.toFixed(2);
+}
+
+const weight = prompt("Podaj swoją wagę w kilogramach:");
+const height = prompt("Podaj swój wzrost w metrach:");
+
+const bmi = calculateBMI(weight, height);
+
+console.log(`Twoje BMI wynosi: ${bmi}`);
+
+if (bmi < 18.5) {
+  console.log("Masz niedowagę.");
+} else if (bmi >= 18.5 && bmi < 25) {
+  console.log("Twoja waga jest prawidłowa.");
+} else if (bmi >= 25 && bmi < 30) {
+  console.log("Masz nadwagę.");
+} else {
+  console.log("Masz otyłość.");
+}
